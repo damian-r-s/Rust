@@ -9,7 +9,7 @@ fn main() {
     let first_number = first.parse::<f32>().unwrap();
     let second_number = second.parse::<f32>().unwrap();
 
-    let result = operate(operator, first_number, second_number);
+    let result = operateMatching(operator, first_number, second_number);
 
     println!(
         "{:?}",
@@ -28,6 +28,16 @@ fn operate(operator: char, first_number: f32, second_number: f32) -> f32 {
         first_number * second_number
     } else {
         0.0
+    }
+}
+
+fn operateMatching(operator: char, first: f32, second: f32) -> f32 {
+    match operator {
+        '+' => first + second,
+        '-' => first - second,
+        '/' => first / second,
+        '*' => first * second,
+        _ => panic!("Invalid operator used!"),
     }
 }
 
