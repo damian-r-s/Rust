@@ -36,7 +36,7 @@ fn operateMatching(operator: char, first: f32, second: f32) -> f32 {
         '+' => first + second,
         '-' => first - second,
         '/' => first / second,
-        '*' => first * second,
+        '*' | 'x' | 'X' => first * second,
         _ => panic!("Invalid operator used!"),
     }
 }
