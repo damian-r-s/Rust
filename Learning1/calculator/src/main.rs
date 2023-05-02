@@ -11,24 +11,26 @@ fn main() {
 
     let result = operate(operator, first_number, second_number);
 
-    println!("{:?}", result);
+    println!(
+        "{:?}",
+        output(first_number, operator, second_number, result)
+    );
 }
 
-
-fn operate(operator: char, first_number: f32, second_number: f32) -> f32{
+fn operate(operator: char, first_number: f32, second_number: f32) -> f32 {
     if operator == '+' {
         first_number + second_number
-    }
-    else if operator == '-' {
+    } else if operator == '-' {
         first_number - second_number
-    }
-    else if operator == '/' {
+    } else if operator == '/' {
         first_number / second_number
-    }
-    else if operator == '*' {
+    } else if operator == '*' {
         first_number * second_number
-    }
-    else {
+    } else {
         0.0
     }
+}
+
+fn output(first: f32, operator: char, second: f32, result: f32) -> String {
+    format!("{} {} {} = {}", first, operator, second, result)
 }
